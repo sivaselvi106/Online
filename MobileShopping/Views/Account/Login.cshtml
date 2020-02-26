@@ -1,0 +1,45 @@
+﻿@model MobileShopping.Entity.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="text-align:center">Login</h2>
+@using (Html.BeginForm("Login", "Account", FormMethod.Get))
+{
+    <table border="1" align="center">
+        <tr>
+            <td> @Html.LabelFor(model => model.MailId)</td>
+            <td>
+                @Html.TextBoxFor(model => model.MailId)
+                @Html.ValidationMessageFor(model => model.MailId)
+
+            </td>
+            @* <td>
+                  @Html.TextBoxFor(Model => Model.MailId)
+                </td>
+                <td>
+                  @Html.TextBox("MailId", null, new { @class = "form-control", data_val = "true", data_val_required = "MailId is required" })
+                          @Html.ValidationMessage("MailId", new { @class = "text-danger" })
+                </td>*@
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.Password)</td>
+
+            <td>
+                @Html.TextBoxFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+            @*<td>@Html.LabelFor(Model => Model.Password)</td>
+                <td>@Html.TextBox("Password", null, new { @class = "form-control", data_val = "true", data_val_required = "Password is required" })
+                @Html.ValidationMessage("Password", new { @class = "text-danger" })
+                </td>*@
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+}
+

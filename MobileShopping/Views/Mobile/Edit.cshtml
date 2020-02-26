@@ -1,0 +1,62 @@
+﻿@model MobileShopping.Entity.Mobile
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    table, tr, td {
+        background-color: pink;
+        border: double;
+        width: 50%;
+    }
+</style>
+<h3>Edit the mobile spec:</h3>
+
+@using (Html.BeginForm("Update", "Mobile", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.Id)
+    <table>
+        <tr>
+            <td>
+                BrandName :
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.BrandName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Model:
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.MobileModel)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Color :
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Color)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Price :
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Price)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update" />
+            </td>
+            <td>
+                <a href="~/Mobile">Back</a>
+            </td>
+        </tr>
+    </table>
+}
+
