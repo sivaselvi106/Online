@@ -30,8 +30,8 @@ namespace MobileShopping.Entity
         [Required]
         public string Gender { get; set; }
         //[Required(ErrorMessage = "Mobile Number is required.")]
-        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
         [Required]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
         public long MobileNo { get; set; }
         //[Required(ErrorMessage = "City Required")]
         [Required]

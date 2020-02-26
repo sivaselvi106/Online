@@ -121,6 +121,7 @@
     <Content Include="Views\Mobile\Create.cshtml" />
     <Content Include="Views\Mobile\Edit.cshtml" />
     <Content Include="Views\Mobile\Display.cshtml" />
+    <Content Include="Views\Shared\UserView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

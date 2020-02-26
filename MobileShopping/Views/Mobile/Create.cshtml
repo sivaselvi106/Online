@@ -9,7 +9,7 @@
     <table>
         <tr>
             <td>
-                BrandName :
+                @Html.LabelFor(Model => Model.BrandName, "Brand name")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.BrandName)
@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>
-                Id :
+                @Html.LabelFor(Model => Model.Id, "Id")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Id)
@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>
-                Model:
+                @Html.LabelFor(Model => Model.MobileModel, "Model")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.MobileModel)
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>
-                Color :
+                @Html.LabelFor(Model => Model.Color, "Color")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Color)
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td>
-                Price :
+                @Html.LabelFor(Model => Model.Price, "Price")
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.Price)

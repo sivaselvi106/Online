@@ -20,13 +20,12 @@ namespace MobileShopping.Controllers
             IEnumerable<Mobile> mobile = mobileRepository.GetMobileDetails();
             return View(mobile);
         }
+        [HttpGet]
         [ActionName("Create")]
         public ActionResult Create()
         {
             return View();
         }
-        [HttpPost]
-        [ActionName("Create")]
         //public ActionResult Create(Mobile mobile)
         //{
         //    mobileRepository.AddMobile(mobile);
@@ -45,6 +44,8 @@ namespace MobileShopping.Controllers
         //    }
         //    return View();
         //}
+        [HttpPost]
+        [ActionName("Create")]
         public ActionResult Create_Post()
         {
             Mobile mobile = new Mobile();

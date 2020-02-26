@@ -14,14 +14,13 @@ namespace MobileShopping.Controllers
         {
             return View();
         }
-        
-        public ActionResult SignUp()
+        [HttpPost]
+        public ActionResult Login(Account account)
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Login(Account account)
+        [HttpGet]
+        public ActionResult SignUp()
         {
             return View();
         }
