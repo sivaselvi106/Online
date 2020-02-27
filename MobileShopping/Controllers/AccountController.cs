@@ -4,30 +4,59 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MobileShopping.Entity;
+using MobileShopping.Repository;
 
 namespace MobileShopping.Controllers
 {
     public class AccountController : Controller
     {
-       
-        public ActionResult Login()
+        AccountRepository accountRepository;
+        public AccountController()
         {
-            return View();
+            accountRepository = new AccountRepository();
         }
-        [HttpPost]
-        public ActionResult Login(Account account)
+        public ActionResult DisplayUsers()
         {
-            return View();
+            IEnumerable<Account> accounts = accountRepository.GetUserDetails();
+            return View(accounts);
         }
         [HttpGet]
+        [ActionName("SignUp")]
         public ActionResult SignUp()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(Account account)
+        [ActionName("SignUp")]
+        public ActionResult SignUp_Post()
+        {
+            Account user = new Account();
+            TryUpdateModel(user);
+            if (ModelState.IsValid)
+            {
+                accountRepository.AddUser(user);
+                TempData["Message"] = "User added successfully!!!";
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Login()
         {
             return View();
         }
+        [HttpPost]
+        public string Login(Account account)
+        {
+            Account user = new Account();
+            TryUpdateModel(user);
+            if (account.MailId.Equals(user.MailId) && account.Password.Equals(user.Password))
+            {
+                return "Successfully logged in";
+            }
+            return "Login failed";
+        }
+       
     }
 }

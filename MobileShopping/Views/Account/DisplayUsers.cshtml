@@ -1,0 +1,40 @@
+﻿@model MobileShopping.Entity.Account
+
+@{
+    ViewBag.Title = "DisplayUsers";
+}
+
+<h2>DisplayUsers</h2>
+
+@Html.ActionLink("Create new user", "SignUp")
+<br />
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+<table border="1">
+    <tr>
+        <th> @Html.LabelFor(Model => Model.UserName, "User name")</th>
+        <th> @Html.LabelFor(Model => Model.UserId, "User Id")</th>
+        <th> @Html.LabelFor(Model => Model.MailId, "MailId")</th>
+        <th> @Html.LabelFor(Model => Model.CreateDate, "Created date")</th>
+        <th> @Html.LabelFor(Model => Model.LastLoginTime, "Last login time")</th>
+        <th> @Html.LabelFor(Model => Model.UpdatedDate, "Updated date")</th>
+        <th> @Html.LabelFor(Model => Model.Age, "Age")</th>
+        <th> @Html.LabelFor(Model => Model.Gender, "Gender")</th>
+        <th> @Html.LabelFor(Model => Model.MobileNo, "Mobile No")</th>
+        <th> @Html.LabelFor(Model => Model.City, "City")</th>
+    </tr>
+    @foreach (MobileShopping.Entity.Account account in @Model)
+    {
+<tr>
+    <td>@account.UserName</td>
+    @model MobileShopping.Entity.Account
+
+    <td>@mobile.Id</td>
+    <td>@mobile.MobileModel</td>
+    <td>@mobile.Color</td>
+    <td>@mobile.Price</td>
+</tr>
+    }
+</table>
