@@ -1,0 +1,23 @@
+﻿.nav-bar-list {
+    background-color: bisque;
+    height: 8%;
+    color: black;
+    overflow: hidden;
+    border: none;
+    list-style-type: none;
+}
+.list {
+    text-decoration: none;
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+.list:hover {
+    background-color: skyblue;
+}
+
+
+
+

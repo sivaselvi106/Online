@@ -25,16 +25,11 @@
         <th> @Html.LabelFor(Model => Model.MobileNo, "Mobile No")</th>
         <th> @Html.LabelFor(Model => Model.City, "City")</th>
     </tr>
-    @foreach (MobileShopping.Entity.Account account in @Model)
+    @foreach (MobileShopping.Entity.Account account in Model)
     {
 <tr>
     <td>@account.UserName</td>
     @model MobileShopping.Entity.Account
-
-    <td>@mobile.Id</td>
-    <td>@mobile.MobileModel</td>
-    <td>@mobile.Color</td>
-    <td>@mobile.Price</td>
 </tr>
     }
 </table>

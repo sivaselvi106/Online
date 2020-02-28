@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MobileShopping.Entity.Mobile>
 @{
     ViewBag.Title = "Display";
 }
@@ -12,12 +12,12 @@
 }
 <table border="1">
     <tr>
-        <th>BrandName</th>
-        <th>Id</th>
-        <th>MobileModel</th>
-        <th>Color</th>
-        <th>Price</th>
-        <th>Action</th>
+        @*<th>@Html.LabelFor(Model => Model.BrandName,"BrandName")</th>
+        <th>@Html.LabelFor(Model => Model.Id,"Id")</th>
+        <th>@Html.LabelFor(Model => Model.MobileModel,"MobileModel")</th>
+        <th>@Html.LabelFor(Model => Model.Color,"Color")</th>
+        <th>@Html.LabelFor(Model => Model.Price,"Price")</th>*@
+        <th>@Html.Label("Action")</th>
     </tr>
     @foreach (MobileShopping.Entity.Mobile mobile in Model)
     {

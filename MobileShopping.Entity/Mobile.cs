@@ -12,10 +12,11 @@ namespace MobileShopping.Entity
         [Required]
         public string BrandName { get; set; }
         [Required]
-        public string MobileModel { get; set; }
-        [Required]
         public int Id { get; set; }
         [Required]
+        public string MobileModel { get; set; }
+        [Required]
+      
         public string Color { get; set; }
         [Required]
         public double Price { get; set; }

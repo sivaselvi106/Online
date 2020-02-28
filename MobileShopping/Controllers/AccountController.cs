@@ -47,15 +47,15 @@ namespace MobileShopping.Controllers
             return View();
         }
         [HttpPost]
-        public string Login(Account account)
+        public ActionResult Login(Account account)
         {
             Account user = new Account();
             TryUpdateModel(user);
             if (account.MailId.Equals(user.MailId) && account.Password.Equals(user.Password))
             {
-                return "Successfully logged in";
+                return RedirectToAction("Display");
             }
-            return "Login failed";
+            return View();
         }
        
     }
